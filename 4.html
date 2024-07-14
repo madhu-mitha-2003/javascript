@@ -1,0 +1,44 @@
+<html>
+<head>
+    <title>DOM Manipulation Exercise</title>
+    <style>
+       #src{
+            width: 20px;
+            height: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="main-heading">Hello, World!</h1>
+    <p class="highlight">This is a highlighted paragraph.</p>
+    <p class="highlight">This is another highlighted paragraph.</p>
+    <p>This is a regular paragraph.</p>
+    <img id="profile-pic" src="https://t3.ftcdn.net/jpg/05/98/71/38/360_F_598713855_9XSeg0xmbTo4GUSf2Yj3QhzfkodIoqo1.jpg"/>
+    <div id="menu-item">Menu Item</div>
+    <button onclick="changeHeading()">Change Content</button>
+    <button onclick="italicText()">Change Font</button>
+    <button onclick="highParagraph()">Change color</button>
+    <button onclick="updateImage()">Change image</button>
+    <script>
+        function changeHeading() {
+            const element = document.getElementById('main-heading');
+            element.textContent = "WELCOME TO JAVASCRIPT!";
+        }
+        function highParagraph(){
+            const paragraphs = document.getElementsByClassName('highlight');
+            for (var i = 0; i < paragraphs.length; i++){
+                paragraphs[i].bgColor = 'yellow';
+            }
+        }
+        function italicText() {
+            const paragraphs = document.getElementsByTagName('p');
+            for (let i = 0; i < paragraphs.length; i++) {
+                paragraphs[i].style.fontStyle = 'italic';
+            }
+        }
+        function updateImage() {
+            document.getElementById("profile-pic").src = "https://www.wallartprints.com.au/blog/wp-content/uploads/2017/10/hummingbird-nature-pictures-98278440.jpg";
+        }
+    </script>
+</body>
+</html>
